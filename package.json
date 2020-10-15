@@ -4,7 +4,7 @@
   "description": "This a web page that you can see the location and the information of orphanages nearby, the user can also add more orphanages and interact with them by message.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/LeoCerqueira/Happy-App#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "hbs": "^4.1.1",
     "nodemon": "^2.0.5"
   }
 }
