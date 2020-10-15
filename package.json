@@ -1,0 +1,23 @@
+{
+  "name": "nlw",
+  "version": "1.0.0",
+  "description": "This a web page that you can see the location and the information of orphanages nearby, the user can also add more orphanages and interact with them by message.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoCerqueira/Happy-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoCerqueira/Happy-App/issues"
+  },
+  "homepage": "https://github.com/LeoCerqueira/Happy-App#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
