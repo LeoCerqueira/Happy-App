@@ -1,7 +1,8 @@
 function saveOrphanage(db, orphanage) {
 	return db.run(`
     INSERT INTO  orphanages (
-
+        
+        
         lat,
         lng,
         name,
@@ -14,6 +15,7 @@ function saveOrphanage(db, orphanage) {
 
     ) VALUES (
 
+       
         "${orphanage.lat}",
         "${orphanage.lng}",
         "${orphanage.name}",
