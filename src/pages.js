@@ -7,6 +7,7 @@ module.exports = {
 	},
 
 	async orphanage(req, res) {
+
         const id = req.query.id
 
         try {
@@ -15,7 +16,13 @@ module.exports = {
             const orphanage = results[0]
 
             orphanage.images = orphanage.images.split(",")
-            orphanage.fisrtImage = orphanage.images[0]
+			orphanage.fisrtImage = orphanage.images[0]
+			
+			if(orphanage.open_on_weekends == "0"){
+				orphanage.open_on_weekends = false
+			}else{
+				orphanage.open_on_weekends = true
+			}
 
 			return res.render('orphanage', { orphanage })
 		} catch (error) {
@@ -29,7 +36,6 @@ module.exports = {
 		try {
             const db = await Database;
 			const orphanages = await db.all('SELECT * FROM orphanages');
-
 			return res.render('orphanages', { orphanages });
 		} catch (error) {
             console.log(error)

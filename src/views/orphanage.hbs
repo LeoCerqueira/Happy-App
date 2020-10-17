@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="pt-br">
 
 <head>
 	<meta charset="UTF-8" />
@@ -39,7 +39,7 @@
 		</aside>
 		<main class="animate-appear width-sidebar">
 			<div class="orphanage-details">
-				<img src="{{orphanage.fisrtImage}}" alt="{{ophanage.name}}" />
+				<img src="{{orphanage.fisrtImage}}" alt="{{orphanage.name}}" />
 				<div class="images">
 					{{#each orphanage.images}}
 					<button onclick="selectImage(event);" class="active" type="button">
@@ -72,19 +72,30 @@
 					</p>
 					<div class="open-details">
 						<div class="hour">
-							<img src="/images/clock.svg" alt="Horários" /> {{orphanage.opening_hours}}
+							<img src="/images/clock.svg" alt="Horários" />
+							{{orphanage.opening_hours}}
 
 						</div>
-						<div class="open-on-weekends">
+
+						{{#if orphanage.open_on_weekends}}
+						<div class="open-on-weekends open">
 							<img src="/images/info.svg" alt="Informações" />
-							{{#if orphanage.open_on_weekedns}}
 							Atendemos fim de semana
-							{{/if}}
 						</div>
+						{{else}}
+						<div class="open-on-weekends closed">
+							<img src="/images/info-red.svg" alt="Informações" />
+							Não atendemos fim de semana
+						</div>
+
+						{{/if}}
 					</div>
-					<button type="button" class="primary-button">
+
+					<a target="_blank"
+						href="https://api.whatsapp.com/send?1=pt_BR&phone={{orphanage.whatsapp}}&text=Oi, quero conversar sobre visitas no {{orphanage.name}}"
+						type="button" class="primary-button">
 						<img src="/images/whatsapp.svg" alt="Chamar no whatsapp" />Entrar em contato
-					</button>
+					</a>
 				</div>
 			</div>
 		</main>
